@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_1" model="hr.salary.tab.level">
+            <field name="name">1</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_2" model="hr.salary.tab.level">
+            <field name="name">2</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_3" model="hr.salary.tab.level">
+            <field name="name">3</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_4" model="hr.salary.tab.level">
+            <field name="name">4</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_5" model="hr.salary.tab.level">
+            <field name="name">5</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_6" model="hr.salary.tab.level">
+            <field name="name">6</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_09_1" model="hr.salary.tab.level">
+            <field name="name">1</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_09_2" model="hr.salary.tab.level">
+            <field name="name">2</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_09_3" model="hr.salary.tab.level">
+            <field name="name">3</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_09_4" model="hr.salary.tab.level">
+            <field name="name">4</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_09_5" model="hr.salary.tab.level">
+            <field name="name">5</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_09_6" model="hr.salary.tab.level">
+            <field name="name">6</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_07_1" model="hr.salary.tab.level">
+            <field name="name">1</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_07_2" model="hr.salary.tab.level">
+            <field name="name">2</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_07_3" model="hr.salary.tab.level">
+            <field name="name">3</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_07_4" model="hr.salary.tab.level">
+            <field name="name">4</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_07_5" model="hr.salary.tab.level">
+            <field name="name">5</field>
+            <field name="ttype">scale</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_scale_07_6" model="hr.salary.tab.level">
+            <field name="name">6</field>
+            <field name="ttype">scale</field>
+        </record>
+
+    </data>
+</odoo>

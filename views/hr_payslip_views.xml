@@ -1,0 +1,261 @@
+<odoo>
+
+        <record id="hr_payslip_run_inh_custom_form" model="ir.ui.view">
+            <field name="name">hr.payslip.run.form</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form" />
+            <field name="arch" type="xml">
+                <field name="company_id" position="before">
+                    <field name="struct_id" readonly="state not in ('draft','verify')"/>
+                    <field name="user_id" />
+                    <field name="cfdi_date_payment" />                
+                    <field name="payslip_run_closed" invisible="1" />
+                </field>
+                <button name="action_draft" position="after">
+                    <field name="payslip_run_closed" invisible="1" />
+                    <button name="action_close_run" id="action_close_run" type="object" class="oe_stat_button" string="Cerrar N&#243;mina" groups="l10n_mx_payslip.group_hr_payroll_run_close" invisible="payslip_run_closed == True or payslip_count == 0 or state == 'close'" />
+                </button>
+                <div name="button_box" position="inside">
+                    <button name="action_validate" id="button_validate" class="oe_stat_button" icon="fa-cogs" type="object" invisible="state == 'close' or payslip_run_closed == False">
+                        <span>Timbrar Nominas</span>
+                    </button>
+                    <button name="action_send_email" id="button_send_email" class="oe_stat_button" icon="fa-envelope-o" type="object">
+                        <span>Enviar Nomina</span>
+                    </button>
+                    <button name="action_compute_sheets" id="button_cumpute_sheet_run" class="oe_stat_button" icon="fa-list-alt" type="object" invisible="state == 'close' or payslip_run_closed == True">
+                        <span>Calcular Nomina</span>
+                    </button>
+                </div>
+            </field>
+        </record>
+
+
+        
+        <record id="act_payslip_lines" model="ir.actions.act_window">
+            <field name="name">Payslip Computation Details</field>
+            <field name="res_model">hr.payslip.line</field>
+            <field name="view_mode">tree</field>
+            <field name="context">
+                {
+                    'default_slip_id': active_id,
+                    'search_default_slip_id': active_id
+                }
+            </field>
+        </record>
+        <record id="act_cancel_history" model="ir.actions.act_window">
+            <field name="name">Payslip Computation Details</field>
+            <field name="res_model">l10n_mx_payroll.uuid.history</field>
+            <field name="view_mode">tree</field>
+            <field name="context">
+                {
+                    'default_slip_id': active_id,
+                    'search_default_slip_id': active_id
+                }
+            </field>
+        </record>
+
+        <record id="action_automatic_payslip_generate_pdf" model="ir.actions.server">
+            <field name="name">Payslip Generate CFDI PDF</field>
+            <field name="model_id" ref="hr_payroll.model_hr_payslip" />
+            <field name="binding_model_id" ref="hr_payroll.model_hr_payslip" />
+            <field name="state">code</field>
+            <field name="code">action = records.payslip_generate_pdf()</field>
+        </record>        
+
+        <record id="view_hr_payslip_inh_custom_form" model="ir.ui.view">
+            <field name="name">hr.payslip.form</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form" />
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button name="%(act_payslip_lines)d" class="oe_stat_button" icon="fa-money" type="action">
+                        <field name="payslip_count" widget="statinfo" string="Payslip" help="Payslip Computation Details" />
+                    </button>
+                    <button name="%(act_cancel_history)d" class="oe_stat_button" icon="fa-money" type="action">
+                        <field name="payslip_cancel_count" widget="statinfo" string="Cancelados" help="Payslip Computation Details" />
+                    </button>
+                </div>
+            </field>
+        </record>
+
+        <record id="view_hr_payslip_form" model="ir.ui.view">
+            <field name="name">hr.payslip.form</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form" />
+            <field name="active" eval="1" />
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="after">
+                    <div class="alert alert-warning" role="alert" style="margin-bottom:0px;" invisible="l10n_mx_edi_error == False">
+                        <field name="l10n_mx_edi_error" type="html" readonly="1" />
+                        <button name="action_payslip_done" type="object" class="oe_link" string="Retry" invisible="l10n_mx_edi_status not in ['False', 'to_send', 'cancelled']" />
+                        <button name="set_l10n_mx_edi_post_time" type="object" class="oe_link" string="Set Post Time" context="{'edi_post_time': True}" invisible="l10n_mx_edi_status not in ['False', 'to_send', 'cancelled']" />                            
+                        <button name="l10n_mx_edi_action_clear_error" type="object" class="oe_link" string="Clear Message" invisible="l10n_mx_edi_status not in ['False', 'to_send', 'cancelled']" />
+                        <button name="l10n_mx_edi_action_download" type="object" class="oe_link" string="Download" groups="base.group_no_one" invisible="l10n_mx_edi_status not in ['False', 'to_send', 'cancelled']" />
+                    </div>
+                </xpath>                
+                <xpath expr="//button[@name='action_payslip_cancel']" position="replace">       
+                    <button string="Cancelar Recibo" name="action_payslip_cancel" type="object" context="{'payslip_cancel':True}" invisible="state not in ('draft','verify')" />
+                </xpath>                
+                <xpath expr="//button[@name='action_payslip_draft']" position="replace">       
+                    <button string="Set to Draft" name="action_payslip_draft" type="object" invisible="state != 'cancel' or invoice_date != False" />
+                </xpath>                
+                <field name="state" position="before">
+                    <button string="TEST XML" name="l10n_mx_edi_export_test_invoice_cfdi" type="object" invisible="l10n_mx_cfdi_uuid != False" />
+                    <button string="Cancelar XML" name="button_cancel_xml" type="object" invisible="l10n_mx_cfdi_uuid == False or l10n_mx_edi_resigned == False" />
+                    <button string="Retimbrar" name="button_resign_xml" type="object" invisible="l10n_mx_cfdi_uuid == False or l10n_mx_edi_resigned == True or state == 'cancel'" />
+                </field>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='category_id']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='quantity']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='rate']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='salary_rule_id']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='amount']" position="attributes">
+                    <attribute name="optional">show</attribute>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='salary_rule_id']" position="after">
+                    <field name="cfdi_tipo" optional="hide" />
+                    <field name="cfdi_codigoagrupador" optional="hide" />
+                    <field name="total_exento" optional="hide" sum="Exe" />
+                    <field name="total_gravado" optional="hide" sum="Grav" />
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/form/group" position="after">
+                    <group string="CFDI Payslip" col="4">
+                        <field name="total_exento" />
+                        <field name="total_gravado" />
+                        <field name="cfdi_tipo" />
+                        <field name="cfdi_tipo_percepcion" invisible="cfdi_tipo != 'p'" />
+                        <field name="cfdi_tipo_deduccion" invisible="cfdi_tipo != 'd'" />
+                        <field name="cfdi_tipo_otrospagos" invisible="cfdi_tipo != 'o'" />
+                        <field name="cfdi_tipo_incapacidad" invisible="cfdi_tipo != 'i'" />
+                        <field name="cfdi_codigoagrupador" invisible="1" />
+                    </group>
+                </xpath>
+                <notebook position="inside">
+                    <page string="CFDI Info">
+                        <group>
+                            <group string="CFDI Origen">
+                                <field name="l10n_mx_edi_origin" radonly="1" />
+                                <field name="cfdi_reason_cancel" readonly="l10n_mx_edi_resigned == False" />
+                                <field name="l10n_mx_edi_resigned" readonly="1" />
+                                <field name="l10n_mx_edi_cfdi_uuid_canceled" />
+                            </group>
+                            <group string="CFDI INFO SAT">
+                                <field name="l10n_mx_edi_status" />
+                                <field name="l10n_mx_edi_sat_status" />
+                                <field name="l10n_mx_cfdi_uuid" invisible="1" />
+                                <field name="l10n_mx_edi_cfdi_uuid" />
+                                
+                            </group>
+                            <group string="CFDI INFO">
+                                <field name="invoice_date" readonly="0" />
+                                <field name="l10n_mx_edi_post_time" readonly="0" />                                
+                                <field name="l10n_mx_edi_version" readonly="1" />
+                                <field name="l10n_mx_edi_cfdi_supplier_rfc" />
+                                <field name="l10n_mx_edi_cfdi_customer_rfc" />
+                                <field name="l10n_mx_edi_cfdi_amount" />
+                                <field name="l10n_mx_edi_sendemail" />
+                            </group>
+                        </group>                        
+                    </page>
+                    <page string="CFDI Payslip">
+                        <separator string="Percepciones" />
+                        <field name="cfdi_percepciones_ids" domain="[('cfdi_tipo', '=', 'p'), ('cfdi_tipo_percepcion', '!=', False), ('total', '!=', 0.0)]" default="{'default_cfdi_tipo', 'p', 'default_slip_id': id}">
+                            <tree>
+                                <field name="name" />
+                                <field name="cfdi_tipo" />
+                                <field name="cfdi_tipo_percepcion" />
+                                <field name="total_exento" sum="Exe" />
+                                <field name="total_gravado" sum="Grav" />
+                                <field name="total" sum="Total" />
+                            </tree>
+                        </field>
+                        <group col="12" class="oe_invoice_lines_tab">
+                            <group colspan="8">
+                                <field name="cfdi_percepcion_totalgravado" />
+                                <field name="cfdi_percepcion_totalexento" />
+                                <field name="cfdi_percepcion_horasextras" />
+                            </group>
+                            <group colspan="4">
+                                 <group class="oe_subtotal_footer oe_right">
+                                    <field name="cfdi_percepcion_totalseparacionindemnizacion" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="cfdi_percepcion_totaljubilacionpensionretiro" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="cfdi_percepcion_totalsueldo" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="cfdi_total_percepcion" class="oe_subtotal_footer_separator" />
+                                 </group>
+                            </group>
+                        </group>
+                        <div class="oe_clear" />
+                        <separator string="Deducciones" />
+                        <field name="cfdi_deducciones_ids" nolabel="1" domain="[('cfdi_tipo', '=', 'd'), ('cfdi_tipo_deduccion', '!=', False)]" default="{'default_cfdi_tipo', 'd', 'default_slip_id': id}">
+                            <tree>
+                                <field name="name" />
+                                <field name="cfdi_tipo" />
+                                <field name="cfdi_tipo_deduccion" />
+                                <field name="total" sum="Total" />
+                            </tree>
+                        </field>
+                        <group col="12" class="oe_invoice_lines_tab">
+                            <group colspan="8"><br /></group>
+                            <group colspan="4">
+                                <group class="oe_subtotal_footer oe_right">
+                                    <field name="cfdi_deduccion_totalimpuestosret" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="cfdi_deduccion_totalotrasdeducciones" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="cfdi_total_deduccion" class="oe_subtotal_footer_separator" />
+                                </group>
+                            </group>
+                        </group>
+
+                        <div class="oe_clear" />
+                        <separator string="Otros Pagos" />
+                        <field name="cfdi_otrospagos_ids" nolabel="1" domain="[('cfdi_tipo', '=', 'o'), ('cfdi_tipo_otrospagos', '!=', False)]" default="{'default_cfdi_tipo', 'o', 'default_slip_id': id}">
+                            <tree>
+                                <field name="name" />
+                                <field name="cfdi_tipo" />
+                                <field name="cfdi_tipo_otrospagos" />
+                                <field name="total" sum="Total" />
+                            </tree>
+                        </field>
+                        <group col="12" class="oe_invoice_lines_tab">
+                            <group colspan="8"><br /></group>
+                            <group colspan="4">
+                                <group class="oe_subtotal_footer oe_right">
+                                    <field name="cfdi_otrospagos_compensacionsaldosafavor" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="cfdi_otrospagos_subsidiocausado" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="cfdi_totalotrospagos" class="oe_subtotal_footer_separator" />
+                                </group>
+                            </group>
+                        </group>
+                        <div class="oe_clear" />
+                        <separator string="Incapacidades" />
+                        <field name="cfdi_incapacidades_ids" nolabel="1" domain="[('cfdi_tipo', '=', 'i'), ('cfdi_tipo_incapacidad', '!=', False)]" default="{'default_cfdi_tipo', 'i', 'default_slip_id': id}">
+                            <tree>
+                                <field name="name" />
+                                <field name="cfdi_tipo" />
+                                <field name="cfdi_tipo_incapacidad" />
+                                <field name="total" sum="Total" />
+                            </tree>
+                        </field>
+                        <group col="12" class="oe_invoice_lines_tab">
+                            <group colspan="8"><br /></group>
+                            <group colspan="4">
+                                <group class="oe_subtotal_footer oe_right">
+                                    <field name="cfdi_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="cfdi_descuento" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                                    <field name="cfdi_total" class="oe_subtotal_footer_separator" />
+                                </group>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+
+</odoo>

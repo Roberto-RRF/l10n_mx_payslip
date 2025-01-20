@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Discharge Reason ???? -->
+    <!--record model="ir.ui.view" id="discharge_reason_view_tree">
+        <field name="name">discharge.reason.view.tree</field>
+        <field name="model">discharge.reason</field>
+        <field name="active" eval="1"/>
+        <field name="arch" type="xml">
+            <tree string="Name">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="discharge_reason_view_form">
+        <field name="name">discharge.reason.view.form</field>
+        <field name="model">discharge.reason</field>
+        <field name="active" eval="1"/>
+        <field name="arch" type="xml">
+            <form string="Discharge Reason">
+                <sheet>
+                    <notebook>
+                        <page string = "General Information">
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_discharge_reason" model="ir.actions.act_window">
+        <field name="name">Discharge Reason</field>
+        <field name="res_model">discharge.reason</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record-->
+
+
+    <!-- Motivation Estatus -->
+    <record model="ir.ui.view" id="motivation_estatus_view_tree">
+        <field name="name">motivation.estatus.view.tree</field>
+        <field name="model">motivation.estatus</field>
+        <field name="arch" type="xml">
+            <tree string="Name">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="motivation_estatus_view_form">
+        <field name="name">motivation.estatus.view.form</field>
+        <field name="model">motivation.estatus</field>
+        <field name="arch" type="xml">
+            <form string="Motivation Estatus">
+                <sheet>
+                    <notebook>
+                        <page string = "General Information">
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+           </form>
+        </field>
+    </record>
+    <record id="action_motivation_estatus" model="ir.actions.act_window">
+        <field name="name">Motivation Estatus</field>
+        <field name="res_model">motivation.estatus</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Motivation Action -->
+    <record model="ir.ui.view" id="motivation_action_view_tree">
+        <field name="name">motivation.action.view.tree</field>
+        <field name="model">motivation.action</field>
+        <field name="active" eval="1"/>
+        <field name="arch" type="xml">
+            <tree string="Name">
+                <field name="name"/>
+                <field name="estatus_id"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="motivation_action_view_form">
+        <field name="name">motivation.action.view.form</field>
+        <field name="model">motivation.action</field>
+        <field name="active" eval="1"/>
+        <field name="arch" type="xml">
+            <form string="Motivation Action">
+                <sheet>
+                    <notebook>
+                        <page string = "General Information">
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="estatus_id"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_motivation_action" model="ir.actions.act_window">
+        <field name="name">Motivation Action</field>
+        <field name="res_model">motivation.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Motivation Reason -->
+    <record model="ir.ui.view" id="motivation_reason_view_tree">
+        <field name="name">motivation.reason.view.tree</field>
+        <field name="model">motivation.reason</field>
+        <field name="active" eval="1"/>
+        <field name="arch" type="xml">
+            <tree string="Name">
+                <field name="name"/>
+                <field name="action_id"/>
+                <field name="hide_payroll"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="motivation_reason_view_form">
+        <field name="name">motivation.reason.view.form</field>
+        <field name="model">motivation.reason</field>
+        <field name="active" eval="1"/>
+        <field name="arch" type="xml">
+            <form string="Motivation Reason">
+                <sheet>
+                    <notebook>
+                        <page string = "General Information">
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                    <field name="action_id"/>
+                                    <field name="hide_payroll"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_motivation_reason" model="ir.actions.act_window">
+        <field name="name">Motivation Reason</field>
+        <field name="res_model">motivation.reason</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Reason -->
+    <record model="ir.ui.view" id="reject_reason_view_tree">
+        <field name="name">reject.reason.view.tree</field>
+        <field name="model">reject.reason</field>
+        <field name="active" eval="1"/>
+        <field name="arch" type="xml">
+            <tree string="Name" editable="bottom">
+                <field name="name"/>
+                <field name="company_ids" widget="many2many_tags_avatar" class="oe_inline" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="reject_reason_view_form">
+        <field name="name">reject.reason.view.form</field>
+        <field name="model">reject.reason</field>
+        <field name="active" eval="1"/>
+        <field name="arch" type="xml">
+            <form string="Reason">
+                <sheet>
+                    <notebook>
+                        <page string = "General Information">
+                            <group>
+                                <group>
+                                    <field name="name"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_reject_reason" model="ir.actions.act_window">
+        <field name="name">Reject Reason</field>
+        <field name="res_model">reject.reason</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Employees configuration menu -->
+    <menuitem id="menu_hr_employee_move_type_emp" name="Moves" parent="hr.menu_human_resources_configuration" groups="base.group_no_one" sequence="20">
+        <menuitem id="menu_view_hr_employee_move_type_status_emp" name="Status" action="action_motivation_estatus" groups="base.group_no_one" sequence="1"/>
+        <menuitem id="menu_view_hr_employee_move_type_action_emp" name="Action" action="action_motivation_action" groups="base.group_no_one" sequence="2"/>
+        <menuitem id="menu_view_hr_employee_move_type_discharge_reason_emp" name="Motivo" action="action_motivation_reason" groups="base.group_no_one" sequence="3"/>
+        <menuitem id="menu_view_hr_employee_move_type_reject_reason_emp" name="Motivo de Separación" action="action_reject_reason" groups="base.group_no_one" sequence="4"/>
+        <!--menuitem id="menu_view_hr_employee_move_type_imss_emp" name="IMSS Move" action="hr_employee_move_type_imss_action" groups="base.group_no_one" sequence="4"/-->
+    </menuitem>
+
+    <!-- Recruitment configuration menu -->
+    <menuitem id="menu_hr_employee_move_type" name="Moves" parent="hr_recruitment.menu_hr_recruitment_configuration" groups="base.group_no_one" sequence="20">
+        <menuitem id="menu_view_hr_employee_move_type_status" name="Status" action="action_motivation_estatus" groups="base.group_no_one" sequence="1"/>
+        <menuitem id="menu_view_hr_employee_move_type_action" name="Action" action="action_motivation_action" groups="base.group_no_one" sequence="2"/>
+        <menuitem id="menu_view_hr_employee_move_type_discharge_reason" name="Motivo" action="action_motivation_reason" groups="base.group_no_one" sequence="3"/>
+        <menuitem id="menu_view_hr_employee_move_type_reject_reason" name="Motivo de Separación" action="action_reject_reason" groups="base.group_no_one" sequence="4"/>
+        <!--menuitem id="menu_view_hr_employee_move_type_imss" name="IMSS Move" action="hr_employee_move_type_imss_action" groups="base.group_no_one" sequence="4"/-->
+    </menuitem>
+
+</odoo>

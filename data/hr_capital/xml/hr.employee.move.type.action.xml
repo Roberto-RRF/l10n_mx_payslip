@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_1_d2826df3" model="hr.employee.move.type">
+            <field name="name">Cambio datos</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_active"/>
+            <field name="imss_move_id"></field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_2_df190c11" model="hr.employee.move.type">
+            <field name="name">Contratación</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_active"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_R"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_3_e7f714cf" model="hr.employee.move.type">
+            <field name="name">Reclasificación puesto</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_active"/>
+            <field name="imss_move_id"></field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_4_bb0ea3a6" model="hr.employee.move.type">
+            <field name="name">Cambio remuneración</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_active"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_M"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_5_3b93844f" model="hr.employee.move.type">
+            <field name="name">Cambio posición</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_active"/>
+            <field name="imss_move_id"></field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_6_48517d02" model="hr.employee.move.type">
+            <field name="name">Ascenso</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_active"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_M"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_7_18f5ac46" model="hr.employee.move.type">
+            <field name="name">Recontratación</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_active"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_R"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_8_1c79c571" model="hr.employee.move.type">
+            <field name="name">Abandono de trabajo</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_3"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_9_d754e9cb" model="hr.employee.move.type">
+            <field name="name">Defunción</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_4"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_10_4cb7d877" model="hr.employee.move.type">
+            <field name="name">Deserción</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_2"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_11_07cc370b" model="hr.employee.move.type">
+            <field name="name">Despido</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_2"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_12_c74059bd" model="hr.employee.move.type">
+            <field name="name">Jubilación</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_9"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_13_eded6ab6" model="hr.employee.move.type">
+            <field name="name">Mutuo acuerdo</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_2"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_14_f2ba45d4" model="hr.employee.move.type">
+            <field name="name">Renuncia voluntaria</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_2"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_15_c93fe3c0" model="hr.employee.move.type">
+            <field name="name">Término de contrato</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_2"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_16_2b80173e" model="hr.employee.move.type">
+            <field name="name">Bajo rendimiento</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_2"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_17_fba0a483" model="hr.employee.move.type">
+            <field name="name">Incumplimiento de políticas</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_2"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_18_5a89a92f" model="hr.employee.move.type">
+            <field name="name">Cambio de Nomina</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_2"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_19_3f2213a1" model="hr.employee.move.type">
+            <field name="name">Promoción</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_active"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_M"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_23_79bc6f51" model="hr.employee.move.type">
+            <field name="name">Descanso</field>
+            <field name="ttype">action</field>
+            <field name="status_id"></field>
+            <field name="imss_move_id"></field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_24_0e84a6d2" model="hr.employee.move.type">
+            <field name="name">Falla Injustificada</field>
+            <field name="ttype">action</field>
+            <field name="status_id"></field>
+            <field name="imss_move_id"></field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_25_c173b6b2" model="hr.employee.move.type">
+            <field name="name">Falta Reloj</field>
+            <field name="ttype">action</field>
+            <field name="status_id"></field>
+            <field name="imss_move_id"></field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_26_acd96397" model="hr.employee.move.type">
+            <field name="name">Permiso con goce de sueldo</field>
+            <field name="ttype">action</field>
+            <field name="status_id"></field>
+            <field name="imss_move_id"></field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_27_9a33236b" model="hr.employee.move.type">
+            <field name="name">Permiso sin goce de sueldo</field>
+            <field name="ttype">action</field>
+            <field name="status_id"></field>
+            <field name="imss_move_id"></field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_28_32bd1f91" model="hr.employee.move.type">
+            <field name="name">Vacación</field>
+            <field name="ttype">action</field>
+            <field name="status_id"></field>
+            <field name="imss_move_id"></field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_29_6777c8c6" model="hr.employee.move.type">
+            <field name="name">Invalidez</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_A"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_31_c711f326" model="hr.employee.move.type">
+            <field name="name">Registro Patronal</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_inactive"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_2"/>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_employee_move_type_action_32_750dca74" model="hr.employee.move.type">
+            <field name="name">Registro Patronal</field>
+            <field name="ttype">action</field>
+            <field name="status_id" ref="l10n_mx_payslip.hr_employee_move_type_active"/>
+            <field name="imss_move_id" ref="l10n_mx_payslip.hr_employee_move_type_imss_R"/>
+        </record>
+
+    </data>
+</odoo>

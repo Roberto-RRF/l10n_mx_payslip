@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PlanSalarialBanco" model="hr.salary.tab.level">
+            <field name="name">Plan Salarial Banco</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PlanSalarialBanco" model="hr.salary.tab.level">
+            <field name="name">Plan Salarial Banco</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PlanSalarialEjecutivos" model="hr.salary.tab.level">
+            <field name="name">Plan Salarial Ejecutivos</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PlanSalarialFRD" model="hr.salary.tab.level">
+            <field name="name">Plan Salarial FRD</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PlanSalarialParaBecarios" model="hr.salary.tab.level">
+            <field name="name">Plan Salarial Para Becarios</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PlanChalanteBecarios" model="hr.salary.tab.level">
+            <field name="name">Plan Chalante Becarios</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PlanSalarialparaHonorarios" model="hr.salary.tab.level">
+            <field name="name">Plan Salarial para Honorarios</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PlanSalarialProveedora" model="hr.salary.tab.level">
+            <field name="name">Plan Salarial Proveedora</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PlanSalarial" model="hr.salary.tab.level">
+            <field name="name">Plan Salarial</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PlanSalarialServicioSocial" model="hr.salary.tab.level">
+            <field name="name">Plan Salarial Servicio Social</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PlanSalarialExterno" model="hr.salary.tab.level">
+            <field name="name">Plan Salarial Externo</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_FINFRD1DG" model="hr.salary.tab.level">
+            <field name="name">FINFRD1DG</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PROVFRD2OP" model="hr.salary.tab.level">
+            <field name="name">PROVFRD2OP</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_G2FRD3ADM" model="hr.salary.tab.level">
+            <field name="name">G2FRD3ADM</field>
+            <field name="ttype">tab</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_tab_PlanSalarialGrupodeControlPorvenir" model="hr.salary.tab.level">
+            <field name="name">Plan Salarial Grupo de Control Porvenir</field>
+            <field name="ttype">tab</field>
+        </record>
+
+    </data>
+</odoo>

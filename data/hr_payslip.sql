@@ -1,0 +1,1 @@
+UPDATE hr_employee AS he SET cfdi_nombre = he.name WHERE he.cfdi_nombre is Null and he.name is not Null;
