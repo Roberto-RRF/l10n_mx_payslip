@@ -1,0 +1,56 @@
+<odoo>
+
+    
+    <record id="l10n_mx_payroll_uma_tree" model="ir.ui.view">
+        <field name="name">l10n_mx_payroll_uma_tree</field>
+        <field name="model">l10n_mx_payroll.uma</field>
+        <field name="active" eval="1" />
+        <field name="arch" type="xml">
+            <tree string="Tabla subsidio al Empleo" editable="top">
+                <field name="date" string="Fecha Efectiva" />
+                <field name="amount" string="Monto" />
+                <field name="name" invisible="1" />
+                <field name="type" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="l10n_mx_payroll_uma_filter" model="ir.ui.view">
+        <field name="name">l10n_mx_payroll_uma_filter</field>
+        <field name="model">l10n_mx_payroll.uma</field>
+        <field name="active" eval="1" />
+        <field name="arch" type="xml">
+            <search string="Search UMA">
+                <field name="type" />
+            </search>
+        </field>
+    </record>
+
+    <record id="l10n_mx_payroll_uma_view_action" model="ir.actions.act_window">
+        <field name="name">Table UMA</field>
+        <field name="res_model">l10n_mx_payroll.uma</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="l10n_mx_payroll_uma_filter" />
+        <field name="domain">[('type', '=', '01')]</field>
+        <field name="context">{'search_default_type': '01', 'default_type': '01'}</field>
+    </record>
+
+    <record id="l10n_mx_payroll_umi_view_action" model="ir.actions.act_window">
+        <field name="name">Table UMI</field>
+        <field name="res_model">l10n_mx_payroll.uma</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="l10n_mx_payroll_uma_filter" />
+        <field name="domain">[('type', '=', '02')]</field>
+        <field name="context">{'search_default_type': '02', 'default_type': '02'}</field>
+    </record>
+
+    <record id="l10n_mx_payroll_sgm_view_action" model="ir.actions.act_window">
+        <field name="name">Table SGM</field>
+        <field name="res_model">l10n_mx_payroll.uma</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="l10n_mx_payroll_uma_filter" />
+        <field name="domain">[('type', '=', '03')]</field>
+        <field name="context">{'search_default_type': '03', 'default_type': '03'}</field>
+    </record>
+   
+</odoo>

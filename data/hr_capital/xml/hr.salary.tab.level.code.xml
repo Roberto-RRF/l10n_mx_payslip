@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_BANC" model="hr.salary.tab.level">
+            <field name="name">BANC</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_BANC" model="hr.salary.tab.level">
+            <field name="name">BANC</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_ESP" model="hr.salary.tab.level">
+            <field name="name">ESP</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_FRD" model="hr.salary.tab.level">
+            <field name="name">FRD</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_PB" model="hr.salary.tab.level">
+            <field name="name">PB</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_PCHB" model="hr.salary.tab.level">
+            <field name="name">PCHB</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_PH" model="hr.salary.tab.level">
+            <field name="name">PH</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_PPRV" model="hr.salary.tab.level">
+            <field name="name">PPRV</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_PS" model="hr.salary.tab.level">
+            <field name="name">PS</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_PSS" model="hr.salary.tab.level">
+            <field name="name">PSS</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_EXT" model="hr.salary.tab.level">
+            <field name="name">EXT</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_FINFRD1" model="hr.salary.tab.level">
+            <field name="name">FINFRD1</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_PROVFRD2" model="hr.salary.tab.level">
+            <field name="name">PROVFRD2</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_G2FRD3" model="hr.salary.tab.level">
+            <field name="name">G2FRD3</field>
+            <field name="ttype">code</field>
+        </record>
+
+        <record id="l10n_mx_payslip.hr_salary_tab_level_code_GCPP01" model="hr.salary.tab.level">
+            <field name="name">GCPP01</field>
+            <field name="ttype">code</field>
+        </record>
+
+    </data>
+</odoo>

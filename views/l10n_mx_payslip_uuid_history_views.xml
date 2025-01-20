@@ -1,0 +1,45 @@
+<odoo>
+    
+    <record id="l10n_mx_payroll_uuid_history_tree" model="ir.ui.view">
+        <field name="name">l10n_mx_payroll_uuid_history_tree</field>
+        <field name="model">l10n_mx_payroll.uuid.history</field>
+        <field name="priority">1</field>
+        <field name="active" eval="1" />
+        <field name="arch" type="xml">
+            <tree string="Historial UUID N&#243;mina" editable="bottom">
+                <field name="name" />
+                <field name="employee_id" />
+                <field name="cfdi_reason_cancel" />
+                <field name="l10n_mx_edi_version" optional="hide" />
+                <field name="l10n_mx_edi_sat_status" optional="hide" />
+                <field name="l10n_mx_edi_post_time" />
+                <field name="l10n_mx_edi_cfdi_uuid" />
+                <field name="l10n_mx_edi_cfdi_customer_rfc" />
+                <field name="l10n_mx_edi_status" optional="hide" />
+                <field name="invoice_date" />
+                <field name="l10n_mx_edi_cfdi_supplier_rfc" optional="hide" />
+                
+            </tree>
+        </field>
+    </record>
+    <record id="l10n_mx_payroll_uuid_history_search" model="ir.ui.view">
+        <field name="name">l10n_mx_payroll_uuid_history_search</field>
+        <field name="model">l10n_mx_payroll.uuid.history</field>
+        <field name="active" eval="1" />
+        <field name="arch" type="xml">
+            <search string="Historial UUID N&#243;mina">
+                <field name="slip_id" string="Recibo" />
+            </search>
+        </field>
+    </record>
+    <record id="l10n_mx_payroll_uuid_history_action" model="ir.actions.act_window">
+        <field name="name">Historial UUID N&#243;mina</field>
+        <field name="res_model">l10n_mx_payroll.uuid.history</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="l10n_mx_payroll_uuid_history_search" />
+        <field name="context">{}</field>
+        <field name="help">This report performs analysis on your payslip.</field>
+    </record>
+    <menuitem id="l10n_mx_payroll_uuid_history_action_menu" name="Historial UUID N&#243;mina" parent="hr_payroll.menu_hr_payroll_payslips" sequence="90" active="True" action="l10n_mx_payroll_uuid_history_action" groups="base.group_system" />
+
+</odoo>

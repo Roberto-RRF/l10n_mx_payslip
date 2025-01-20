@@ -1,0 +1,90 @@
+<odoo>
+   
+        <menuitem
+            id="l10n_mx_payroll_root_menu"
+            name="CFDI Payslip"
+            parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"
+            sequence="100" active="True"
+            groups="base.group_system"/>
+
+            <menuitem
+                id="edidataconfiguration_category_menu"
+                name="Edi Data XML Category"
+                parent="l10n_mx_payslip.l10n_mx_payroll_root_menu"
+                sequence="90" active="True"
+                action="edidataconfiguration_category_action"
+                groups="base.group_system"/>
+
+            <menuitem
+                id="menu_payroll_report"
+                name="Edi Data XML Configuration"
+                parent="l10n_mx_payslip.l10n_mx_payroll_root_menu"
+                sequence="100" active="True"
+                action="payroll_report_action"
+                groups="base.group_system"/>
+
+            <menuitem
+                id="l10n_mx_payroll_regpat_menu"
+                name="Registro Patronal"
+                parent="l10n_mx_payslip.l10n_mx_payroll_root_menu"
+                sequence="110" active="True"
+                action="l10n_mx_payroll_regpat_action"
+                groups="base.group_system"/>
+
+            <menuitem
+                id="hr_tabla_isr_view_menu"
+                name="Tabla ISR"
+                parent="l10n_mx_payslip.l10n_mx_payroll_root_menu"
+                sequence="120" active="True"
+                action="hr_tabla_isr_view_action"
+                groups="base.group_system"/>          
+
+            <menuitem
+                id="hr_tabla_subsidio_view_menu"
+                name="Tabla Subsidio al Empleo"
+                parent="l10n_mx_payslip.l10n_mx_payroll_root_menu"
+                sequence="130" active="True"
+                action="hr_tabla_subsidio_view_action"
+                groups="base.group_system"/>
+
+            <menuitem
+                id="l10n_mx_payroll_uma_view_menu"
+                name="UMA"
+                parent="l10n_mx_payslip.l10n_mx_payroll_root_menu"
+                sequence="140" active="True"
+                action="l10n_mx_payroll_uma_view_action"
+                groups="base.group_system"/>
+
+            <menuitem
+                id="l10n_mx_payroll_umi_view_menu"
+                name="UMI"
+                parent="l10n_mx_payslip.l10n_mx_payroll_root_menu"
+                sequence="150" active="True"
+                action="l10n_mx_payroll_umi_view_action"
+                groups="base.group_system"/>
+
+            <menuitem
+                id="l10n_mx_payroll_sgm_view_menu"
+                name="SGM"
+                parent="l10n_mx_payslip.l10n_mx_payroll_root_menu"
+                sequence="160" active="True"
+                action="l10n_mx_payroll_sgm_view_action"
+                groups="base.group_system"/>
+
+            <menuitem
+                id="hr_tabla_cesantia_view_menu"
+                name="Tabla Censantía y Vejez"
+                parent="l10n_mx_payslip.l10n_mx_payroll_root_menu"
+                sequence="170" active="True"
+                action="hr_tabla_cesantia_view_action"
+                groups="base.group_system"/>
+
+            <menuitem
+                id="hr_tabla_primariesgo_view_menu"
+                name="Tabla Prima Riesgo"
+                parent="l10n_mx_payslip.l10n_mx_payroll_root_menu"
+                sequence="170" active="True"
+                action="hr_tabla_primariesgo_view_action"
+                groups="base.group_system"/>
+
+</odoo>

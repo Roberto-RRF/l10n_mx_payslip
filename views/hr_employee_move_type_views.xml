@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Status -->
+        <record id="hr_employee_move_type_view_search" model="ir.ui.view">
+            <field name="name">hr.employee.move.type.view.search</field>
+            <field name="model">hr.employee.move.type</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+        <record id="hr_employee_move_type_status_view_tree" model="ir.ui.view">
+            <field name="name">hr.employee.move.type.view.tree</field>
+            <field name="model">hr.employee.move.type</field>
+            <field name="arch" type="xml">
+                <tree string="Status" editable="bottom">
+                    <field name="name"/>
+                    <field name="company_ids" widget="many2many_tags_avatar" placeholder="Select companies..." class="oe_inline"/>
+                    <field name="ttype" invisible="1"/>                    
+                </tree>
+            </field>
+        </record>
+        <record id="hr_employee_move_type_status_view_form" model="ir.ui.view">
+            <field name="name">hr.employee.move.type.view.form</field>
+            <field name="model">hr.employee.move.type</field>
+            <field name="arch" type="xml">
+                <form string="Status">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="company_ids" widget="many2many_tags_avatar" placeholder="Select companies..." class="oe_inline"/>
+                                <field name="ttype" invisible="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="hr_employee_move_type_status_action" model="ir.actions.act_window">
+            <field name="name">Status</field>
+            <field name="res_model">hr.employee.move.type</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="hr_employee_move_type_view_search"/>
+            <field name="view_id" ref="hr_employee_move_type_status_view_tree"/>
+            <field name="domain">[('ttype','=','status')]</field>
+            <field name="context">{'default_ttype': 'status'}</field>
+        </record>
+        <record id="hr_employee_move_type_status_actions_tree" model="ir.actions.act_window.view">
+            <field name="view_mode">tree</field>
+            
+            <field name="act_window_id" ref="hr_employee_move_type_status_action"/>
+        </record>
+        <record id="hr_employee_move_type_status_actions_form" model="ir.actions.act_window.view">
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hr_employee_move_type_status_view_form"/>
+            <field name="act_window_id" ref="hr_employee_move_type_status_action"/>
+        </record>
+
+
+        <!-- Action -->
+        <record id="hr_employee_move_type_action_view_tree" model="ir.ui.view">
+            <field name="name">hr.employee.move.type.view.tree</field>
+            <field name="model">hr.employee.move.type</field>
+            <field name="arch" type="xml">
+                <tree string="Action" editable="bottom">
+                    <field name="name"/>
+                    <field name="imss_move"/>
+                    <field name="status_id"/>
+                    <field name="company_ids" widget="many2many_tags_avatar" placeholder="Select companies..." class="oe_inline"/>
+                    <field name="ttype" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="hr_employee_move_type_action_view_form" model="ir.ui.view">
+            <field name="name">hr.employee.move.type.view.form</field>
+            <field name="model">hr.employee.move.type</field>
+            <field name="arch" type="xml">
+                <form string="Action">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="status_id"/>
+                                <field name="company_ids" widget="many2many_tags_avatar" placeholder="Select companies..." class="oe_inline"/>
+                                <field name="imss_move"/>
+                                <field name="ttype" invisible="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="hr_employee_move_type_action_action" model="ir.actions.act_window">
+            <field name="name">Action</field>
+            <field name="res_model">hr.employee.move.type</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="hr_employee_move_type_view_search"/>
+            <field name="view_id" ref="hr_employee_move_type_action_view_tree"/>
+            <field name="domain">[('ttype','=','action')]</field>
+            <field name="context">{'default_ttype': 'action'}</field>
+        </record>
+        <record id="hr_employee_move_type_action_actions_tree" model="ir.actions.act_window.view">
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="hr_employee_move_type_action_view_tree"/>
+            <field name="act_window_id" ref="hr_employee_move_type_action_action"/>
+        </record>
+        <record id="hr_employee_move_type_action_actions_form" model="ir.actions.act_window.view">
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hr_employee_move_type_action_view_form"/>
+            <field name="act_window_id" ref="hr_employee_move_type_action_action"/>
+        </record>
+
+
+        <!-- Reason -->
+        <record id="hr_employee_move_type_reason_view_tree" model="ir.ui.view">
+            <field name="name">hr.employee.move.type.view.tree</field>
+            <field name="model">hr.employee.move.type</field>
+            <field name="arch" type="xml">
+                <tree string="Reason" editable="bottom">
+                    <field name="name"/>
+                    <field name="action_id"/>
+                    <field name="move_control"/>
+                    <field name="company_ids" widget="many2many_tags"/>
+                    <field name="ttype" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="hr_employee_move_type_reason_view_form" model="ir.ui.view">
+            <field name="name">hr.employee.move.type.view.form</field>
+            <field name="model">hr.employee.move.type</field>
+            <field name="arch" type="xml">
+                <form string="Reason">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="action_id"/>
+                                <field name="company_ids" widget="many2many_tags"/>
+                                <field name="move_control"/>
+                                <field name="ttype" invisible="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="hr_employee_move_type_reason_action" model="ir.actions.act_window">
+            <field name="name">Reason</field>
+            <field name="res_model">hr.employee.move.type</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="hr_employee_move_type_view_search"/>
+            <field name="view_id" ref="hr_employee_move_type_reason_view_tree"/>
+            <field name="domain">[('ttype','=','reason')]</field>
+            <field name="context">{'default_ttype': 'reason'}</field>
+        </record>
+        <record id="hr_employee_move_type_reason_actions_tree" model="ir.actions.act_window.view">
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="hr_employee_move_type_reason_view_tree"/>
+            <field name="act_window_id" ref="hr_employee_move_type_reason_action"/>
+        </record>
+        <record id="hr_employee_move_type_reason_actions_form" model="ir.actions.act_window.view">
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hr_employee_move_type_reason_view_form"/>
+            <field name="act_window_id" ref="hr_employee_move_type_reason_action"/>
+        </record>
+
+
+
+        <!-- IMSS Move -->
+        <record id="hr_employee_move_type_imss_view_tree" model="ir.ui.view">
+            <field name="name">hr.employee.move.type.view.tree</field>
+            <field name="model">hr.employee.move.type</field>
+            <field name="arch" type="xml">
+                <tree string="IMSS Move" editable="bottom">
+                    <field name="name"/>
+                    <field name="code_imss"/>
+                    <field name="code_sua"/>
+                    <field name="company_ids" widget="many2many_tags"/>
+                    <field name="ttype" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="hr_employee_move_type_imss_view_form" model="ir.ui.view">
+            <field name="name">hr.employee.move.type.view.form</field>
+            <field name="model">hr.employee.move.type</field>
+            <field name="arch" type="xml">
+                <form string="IMSS Move">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="company_ids" widget="many2many_tags"/>
+                                <field name="code_imss"/>
+                                <field name="code_sua"/>
+                                <field name="ttype" invisible="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="hr_employee_move_type_imss_action" model="ir.actions.act_window">
+            <field name="name">IMSS Move</field>
+            <field name="res_model">hr.employee.move.type</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="hr_employee_move_type_imss_view_tree"/>
+            <field name="search_view_id" ref="hr_employee_move_type_view_search"/>
+            <field name="domain">[('ttype','=','imss')]</field>
+            <field name="context">{'default_ttype': 'imss'}</field>
+        </record>
+        <record id="hr_employee_move_type_imss_actions_tree" model="ir.actions.act_window.view">
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="hr_employee_move_type_imss_view_tree"/>
+            <field name="act_window_id" ref="hr_employee_move_type_imss_action"/>
+        </record>
+        <record id="hr_employee_move_type_imss_actions_form" model="ir.actions.act_window.view">
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hr_employee_move_type_imss_view_form"/>
+            <field name="act_window_id" ref="hr_employee_move_type_imss_action"/>
+        </record>
+
+
+    </data>
+</odoo>
